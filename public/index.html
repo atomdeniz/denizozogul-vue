@@ -1,17 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Deniz Özoğul</title>
+    <meta name="description" content="Deniz Özoğul'un kişisel webstesi" />
+    <meta
+      name="keywords"
+      content="deniz, ozogul, özoğul, blog, deniz.ozogul, deniz özoğul, deniz ozogul,DENİZ,OZOGUL,DENİZ ÖZOĞUL"
+    />
+
+    <!-- Mobile Specific Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <!-- Load Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,100,300italic,300,100italic,400italic,500,500italic,700,700italic&amp;subset=latin,cyrillic"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/glitche-basic.css" />
+    <link rel="stylesheet" href="css/glitche-layout.css" />
+    <link rel="stylesheet" href="css/ionicons.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+
+    <link rel="stylesheet" href="css/template-colors/orange.css" />
+    <link rel="stylesheet" href="css/template-dark/dark.css" />
+    <link rel="shortcut icon" href="images/favicons/favicon.ico" />
+    <style>
+      html {
+        scrollbar-face-color: #646464;
+        scrollbar-base-color: #646464;
+        scrollbar-3dlight-color: #646464;
+        scrollbar-highlight-color: #646464;
+        scrollbar-track-color: #000;
+        scrollbar-arrow-color: #000;
+        scrollbar-shadow-color: #646464;
+        scrollbar-dark-shadow-color: #646464;
+      }
+
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 3px;
+      }
+
+      ::-webkit-scrollbar-button {
+        background-color: #666;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: #646464;
+      }
+
+      ::-webkit-scrollbar-track-piece {
+        background-color: #000;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        height: 50px;
+        background-color: #666;
+        border-radius: 3px;
+      }
+
+      ::-webkit-scrollbar-corner {
+        background-color: #646464;
+      }
+
+      ::-webkit-resizer {
+        background-color: #666;
+      }
+    </style>
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong
+        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+        properly without JavaScript enabled. Please enable it to
+        continue.</strong
+      >
     </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="centrize full-width">
+        <div class="vertical-center">
+          <div class="pre-inner">
+            <div class="load typing-load"><p>loading...</p></div>
+            <span class="typed-load"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Container -->
+    <div class="container">
+        <div id="app"></div>
+         <!-- Footer -->
+      <footer>
+        <div class="soc">
+          <a target="_blank" href="https://github.com/atomdeniz"
+            ><span class="ion ion-social-github"></span
+          ></a>
+          <a target="_blank" href="https://www.instagram.com/denizozogul97"
+            ><span class="ion ion-social-instagram-outline"></span
+          ></a>
+          <a target="_blank" href="https://linkedin.com/in/denizozogul"
+            ><span class="ion ion-social-linkedin"></span
+          ></a>
+          <a target="_blank" href="mailto:contact@denizozogul.com"
+            ><span class="ion ion-email"></span
+          ></a>
+        </div>
+        <div class="copy">© 2020 DenizOzogul. All lefts reserved.</div>
+        <div class="clr"></div>
+      </footer>
+
+      <!-- Lines -->
+      <div class="line top"></div>
+      <div class="line bottom"></div>
+      <div class="line left"></div>
+      <div class="line right"></div>
+      </div>
+
+     
+    </div>
+
+    <!-- jQuery Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/typed.js"></script>
+    <script src="js/magnific-popup.js"></script>
+    <script src="js/imagesloaded.pkgd.js"></script>
+    <script src="js/isotope.pkgd.js"></script>
+
+    <!-- Main Scripts -->
+    <script src="js/glitche-scripts.js"></script>
   </body>
 </html>

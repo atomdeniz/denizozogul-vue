@@ -1,32 +1,20 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <header>
+      <div class="head-top">
+        <a href="#" class="menu-btn"><span></span></a>
+        <div class="top-menu">
+          <ul>
+            <!-- <li>
+              <router-link to="/" class="btn">Home</router-link>
+            </li> -->
+            <li>
+              <router-link to="/Contact" class="btn">Contact</router-link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="wrapper"><router-view /></div>
   </div>
 </template>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
