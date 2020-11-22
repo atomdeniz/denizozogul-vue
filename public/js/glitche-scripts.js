@@ -24,6 +24,10 @@ $(function() {
 
   /* Preloader */
   $(window).load(function() {
+    $("#my_audio")
+      .get(0)
+      .play();
+
     $(".preloader .pre-inner").fadeOut(800, function() {
       /* Preload hide */
       $(".preloader").fadeOut();

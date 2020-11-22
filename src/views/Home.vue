@@ -15,5 +15,6 @@
         </div>
       </div>
     </div>
+    <audio id="my_audio" src="music/sad.mp3" loop="loop"></audio>
   </div>
 </template>
