@@ -1,4 +1,4 @@
-FROM arm64v8/node:lts-alpine
+FROM node:lts-alpine3.20
 
 # install simple http server for serving static content
 RUN npm install -g http-server
