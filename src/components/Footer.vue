@@ -1,29 +1,28 @@
 <template>
   <footer>
     <div class="soc">
-      <a target="_blank" href="https://github.com/atomdeniz"
-        ><span class="ion ion-social-github"></span
-      ></a>
-      <a target="_blank" href="https://www.instagram.com/denizozogul97"
-        ><span class="ion ion-social-instagram-outline"></span
-      ></a>
-      <a target="_blank" href="https://linkedin.com/in/denizozogul"
-        ><span class="ion ion-social-linkedin"></span
-      ></a>
-      <a target="_blank" href="mailto:admin@denizozogul.com"
-        ><span class="ion ion-email"></span
-      ></a>
-      <a target="_blank" href="https://www.instagram.com/idkmyphoto"
-        ><span class="ion ion-camera"></span
-      ></a>
+      <a target="_blank" href="https://github.com/atomdeniz">
+        <span class="ion ion-social-github"></span>
+      </a>
+      <a target="_blank" href="https://www.instagram.com/denizozogul97">
+        <span class="ion ion-social-instagram-outline"></span>
+      </a>
+      <a target="_blank" href="https://linkedin.com/in/denizozogul">
+        <span class="ion ion-social-linkedin"></span>
+      </a>
+      <a target="_blank" href="mailto:admin@denizozogul.com">
+        <span class="ion ion-email"></span>
+      </a>
+      <a target="_blank" href="https://www.instagram.com/idkmyphoto">
+        <span class="ion ion-camera"></span>
+      </a>
     </div>
-    <div class="clr" style="cursor:pointer" id="playstop" @click="playAudio">
+    <div class="clr" style="cursor:pointer" id="playstop" @click="toggleAudio">
       Play
     </div>
-
     <br />
     <div class="copy">
-      © {{ currentYear }} Deniz ÖZOĞUL. All lefts reserved.
+      © {{ currentYear }} Deniz ÖZOĞUL. All rights reserved.
     </div>
   </footer>
 </template>
@@ -34,50 +33,50 @@ export default {
   data() {
     return {
       currentYear: new Date().getFullYear(),
-      isPlay: false,
+      isPlaying: false,
     };
   },
   methods: {
-    colorChanger() {
-      let css =
-        "html {-webkit-filter: invert(100%); -moz-filter: invert(100%); -o-filter: invert(100%); -ms-filter: invert(100%); }";
-      const head = document.getElementsByTagName("head")[0];
-      const style = document.createElement("style");
-
-      // A hack to toggle invert color back and forth
-      if (!window.counter) {
-        window.counter = 1;
-      } else {
-        window.counter++;
-        if (window.counter % 2 === 0) {
-          css =
-            "html {-webkit-filter: invert(0%); -moz-filter: invert(0%); -o-filter: invert(0%); -ms-filter: invert(0%); }";
-        }
-      }
-
-      style.type = "text/css";
-      if (style.styleSheet) {
-        style.styleSheet.cssText = css;
-      } else {
-        style.appendChild(document.createTextNode(css));
-      }
-
-      head.appendChild(style);
-    },
-    playAudio() {
+    toggleAudio() {
       const audio = document.getElementById("my_audio");
-      const playstop = document.getElementById("playstop");
+      if (!audio) {
+        console.error("Audio element not found.");
+        return;
+      }
 
-      if (!this.isPlay) {
-        audio.play();
-        this.isPlay = true;
-        playstop.innerHTML = "Stop";
-        this.colorChanger();
+      // Toggle play/pause
+      if (!this.isPlaying) {
+        audio.muted = false; // Ensure audio is not muted
+        audio
+          .play()
+          .then(() => {
+            this.isPlaying = true;
+            document.getElementById("playstop").textContent = "Stop";
+            this.toggleColorInversion();
+          })
+          .catch((error) => {
+            console.error("Audio play failed:", error);
+          });
       } else {
         audio.pause();
-        this.isPlay = false;
-        playstop.innerHTML = "Play";
-        this.colorChanger();
+        this.isPlaying = false;
+        document.getElementById("playstop").textContent = "Play";
+        this.toggleColorInversion();
+      }
+    },
+    toggleColorInversion() {
+      const css = this.isPlaying
+        ? "html { filter: invert(100%); }"
+        : "html { filter: invert(0%); }";
+
+      const styleElement = document.getElementById("invert-style");
+      if (styleElement) {
+        styleElement.textContent = css;
+      } else {
+        const style = document.createElement("style");
+        style.id = "invert-style";
+        style.textContent = css;
+        document.head.appendChild(style);
       }
     },
   },
