@@ -34,7 +34,7 @@ jobs:
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
 
       - name: Build Docker image
-        run: docker build . --file Dockerfile --tag 874521/denizozogulsite:latest
+        run: docker build --platform linux/amd64 . --file Dockerfile --tag 874521/denizozogulsite:latest
 #replace victoriamartinsahagun with your DockerHub username
 #replace vueapp with the image name
 
