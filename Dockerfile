@@ -1,21 +1,23 @@
-FROM node:lts-alpine
-# install simple http server for serving static content
-RUN npm install -g http-server
+# Base image olarak ARM64 uyumlu bir Node.js image seçiyoruz
+FROM node:18-alpine AS build-stage
 
-# make the 'app' folder the current working directory
+# Çalışma dizini oluştur ve seç
 WORKDIR /app
 
-# copy both 'package.json' and 'package-lock.json' (if available)
+# Paket dosyalarını kopyala ve bağımlılıkları yükle
 COPY package*.json ./
-
-# install project dependencies
 RUN npm install
 
-# copy project files and folders to the current working directory (i.e. 'app' folder)
+# Uygulama dosyalarını kopyala ve üretim için derle
 COPY . .
-
-# build app for production with minification
 RUN npm run build
 
+# Prod-stage için Nginx image'ı kullanıyoruz
+FROM nginx:stable-alpine AS production-stage
+
+# Vue.js uygulamasını Nginx'e kopyala
+COPY --from=build-stage /app/dist /usr/share/nginx/html
+
+# Nginx için gerekli izinler ve port açma işlemleri
 EXPOSE 8080
-CMD [ "http-server", "dist" ]
+CMD ["nginx", "-g", "daemon off;"]
