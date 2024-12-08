@@ -1,4 +1,4 @@
-name: Build and Push to Docker Hub
+name: Build and Push Docker Image to Docker Hub
 
 on:
   push:
@@ -10,22 +10,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Kaynak kodu çek
+      # 1. Kaynak kodu çek
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Docker Buildx'i ayarla
+      # 2. Docker Buildx'i ayarla
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      # Docker Hub'a giriş yap
+      # 3. Docker Hub'a giriş yap
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-      # ARM64 mimarisi için imajı oluştur ve Docker Hub'a push et
+      # 4. ARM64 mimarisi için imaj oluştur ve push et
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
