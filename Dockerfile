@@ -18,6 +18,9 @@ FROM arm64v8/nginx:stable-alpine AS production-stage
 # Vue.js uygulamasını Nginx'e kopyala
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 
+# SPA routing için nginx config
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
 # Nginx için gerekli izinler ve port açma işlemleri
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

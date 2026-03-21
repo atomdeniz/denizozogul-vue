@@ -7,6 +7,16 @@ const routes = [
     name: "Home",
     component: Home,
   },
+  {
+    path: "/telsizci/privacy-policy",
+    name: "TelsizciPrivacyPolicy",
+    component: () => import("../views/TelsizciPrivacyPolicy.vue"),
+  },
+  {
+    path: "/telsizci/support",
+    name: "TelsizciSupport",
+    component: () => import("../views/TelsizciSupport.vue"),
+  },
 ];
 
 const router = createRouter({
