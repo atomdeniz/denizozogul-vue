@@ -1,23 +1,32 @@
 <template>
   <footer>
     <div class="soc">
-      <a target="_blank" href="https://github.com/atomdeniz">
-        <span class="ion ion-social-github"></span>
+      <a target="_blank" rel="noopener me" href="https://github.com/atomdeniz" aria-label="GitHub">
+        <span class="ion ion-social-github" aria-hidden="true"></span>
       </a>
-      <a target="_blank" href="https://www.instagram.com/denizozogul97">
-        <span class="ion ion-social-instagram-outline"></span>
+      <a target="_blank" rel="noopener me" href="https://www.instagram.com/denizozogul97" aria-label="Instagram">
+        <span class="ion ion-social-instagram-outline" aria-hidden="true"></span>
       </a>
-      <a target="_blank" href="https://linkedin.com/in/denizozogul">
-        <span class="ion ion-social-linkedin"></span>
+      <a target="_blank" rel="noopener me" href="https://linkedin.com/in/denizozogul" aria-label="LinkedIn">
+        <span class="ion ion-social-linkedin" aria-hidden="true"></span>
       </a>
-      <a target="_blank" href="mailto:admin@denizozogul.com">
-        <span class="ion ion-email"></span>
+      <a target="_blank" rel="noopener me" href="mailto:admin@denizozogul.com" aria-label="E-mail">
+        <span class="ion ion-email" aria-hidden="true"></span>
       </a>
-      <a target="_blank" href="https://www.instagram.com/idkmyphoto">
-        <span class="ion ion-camera"></span>
+      <a target="_blank" rel="noopener me" href="https://www.instagram.com/idkmyphoto" aria-label="Photography on Instagram">
+        <span class="ion ion-camera" aria-hidden="true"></span>
       </a>
     </div>
-    <div class="clr" style="cursor:pointer" id="playstop" @click="toggleAudio">
+    <div
+      class="clr"
+      style="cursor:pointer"
+      id="playstop"
+      role="button"
+      tabindex="0"
+      @click="toggleAudio"
+      @keydown.enter.prevent="toggleAudio"
+      @keydown.space.prevent="toggleAudio"
+    >
       Play
     </div>
     <br />
@@ -82,3 +91,21 @@ export default {
   },
 };
 </script>
+
+
+<style scoped>
+/* 24x24 tap targets (WCAG 2.5.8) with the same visual spacing as before. */
+.soc a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  min-height: 24px;
+  margin-left: 5px;
+}
+#playstop {
+  display: inline-block;
+  min-height: 24px;
+  line-height: 24px;
+}
+</style>

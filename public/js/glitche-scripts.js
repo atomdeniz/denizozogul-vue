@@ -9,7 +9,7 @@
 $(function() {
   "use strict";
 
-  $(window).unload(function() {});
+
 
   /* Set full height in blocks */
   var width = $(window).width();

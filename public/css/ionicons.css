@@ -11,16 +11,12 @@
 */
 
 @font-face {
-       font-family: "Ionicons"; 
-    src: 
-        url("../fonts/ionicons790f.eot?v=2.0.1"); 
-    src: 
-        url("../fonts/ionicons790f.eot?v=2.0.1#iefix") format("embedded-opentype"),
-        url("../fonts/ionicons790f.ttf?v=2.0.1") format("truetype"),
-        url("../fonts/ionicons790f.woff?v=2.0.1") format("woff"),
-        url("../fonts/ionicons790f.svg?v=2.0.1#Ionicons") format("svg"); 
-    font-weight: normal; 
-    font-style: normal;
+  font-family: "Ionicons";
+  src: url("../fonts/ionicons790f.woff?v=2.0.1") format("woff"),
+    url("../fonts/ionicons790f.ttf?v=2.0.1") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
 }
 
 .ion,
