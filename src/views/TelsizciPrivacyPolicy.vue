@@ -70,6 +70,14 @@ export default {
   max-width: 720px;
   margin: 0 auto;
 }
+/* The site-wide dark theme paints headings and bold text near-white;
+   this page is light, so give them a dark color explicitly. */
+h1,
+h2,
+h3,
+strong {
+  color: #1d1d1f;
+}
 h1 {
   font-size: 2rem;
   margin-bottom: 0.25rem;
