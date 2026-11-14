@@ -177,8 +177,7 @@ function headFor(path, meta) {
 }
 
 function render(path, meta) {
-  // The default tags from public/index.html are swapped for per-page ones.
-  // (Comments are stripped by the HTML minifier, so we match the tags.)
+  // The default tags from index.html are swapped for per-page ones.
   const defaults = [
     /<title>[\s\S]*?<\/title>/,
     /<meta name="description"[^>]*>/,

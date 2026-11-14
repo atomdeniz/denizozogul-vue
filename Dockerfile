@@ -1,12 +1,12 @@
 # Base image olarak ARM64 uyumlu bir Node.js image kullanıyoruz
-FROM node:18-alpine AS build-stage
+FROM node:26-alpine AS build-stage
 
 # Çalışma dizini oluştur ve seç
 WORKDIR /app
 
 # Paket dosyalarını kopyala ve bağımlılıkları yükle
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 
 # Uygulama dosyalarını kopyala ve üretim için derle
 COPY . .

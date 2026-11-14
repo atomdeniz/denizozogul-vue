@@ -38,7 +38,7 @@
 
 <script>
 export default {
-  name: "Footer",
+  name: "SiteFooter",
   data() {
     return {
       currentYear: new Date().getFullYear(),

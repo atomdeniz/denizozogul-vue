@@ -29,7 +29,7 @@
 import { themePage } from "../theme";
 
 export default {
-  name: "Home",
+  name: "HomeView",
   mixins: [themePage],
 };
 </script>

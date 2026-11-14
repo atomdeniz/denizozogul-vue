@@ -167,7 +167,7 @@ import { profile, jobs, education, skills, interests } from "../data/resume.mjs"
 import { themePage } from "../theme";
 
 export default {
-  name: "Resume",
+  name: "ResumeView",
   mixins: [themePage],
   data() {
     return { profile, jobs, education, skills, interests };

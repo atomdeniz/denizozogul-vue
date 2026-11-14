@@ -1,24 +1,15 @@
-# denizozogulcom-vue
+# denizozogul.com
 
-## Project setup
-```
-npm install
-```
+Personal website built with Vue 3 and Vite.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Requires Node.js 22.12 or newer.
 
-### Compiles and minifies for production
-```
-npm run build
+```sh
+npm install      # install dependencies
+npm run dev      # dev server with hot reload
+npm run build    # production build + per-route prerender (scripts/prerender.mjs)
+npm run preview  # serve the production build locally
+npm run lint     # ESLint
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Production runs in Docker: the build output is served by nginx (`nginx.conf`).
